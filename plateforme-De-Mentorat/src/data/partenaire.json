@@ -1,0 +1,39 @@
+ [
+    {
+        "name": "Colect Mentorat",
+        "logo": "src/assets/img/Partenaires/Collectif Mentorat (1).png",
+        "url": "https://unicef.org"
+    },
+    {
+        "name": "kadea",
+        "logo": "src/assets/img/Partenaires/logo-818e54fbb08d28e946aed46c1f2f6239.svg",
+        "url": "https:/www.kadea.academy/"
+    },
+    {
+        "name": "France.TV",
+        "logo": "src/assets/img/Partenaires/France TV (1).png",
+        "url": "https:/www.kadea.academy/"
+    },
+    {
+        "name": "LinkdIn",
+        "logo":"src/assets/img/Partenaires/Linkedin.png",
+        "url": "https:/www.kadea.academy/"
+    },
+    {
+        "name": "UE",
+        "logo":"src/assets/img/Partenaires/UE (1).png",
+        "url": "https:/www.kadea.academy/"
+    },
+    {
+        "name": "Bouygues",
+        "logo":"src/assets/img/Partenaires/Bouygues.png",
+        "url": "https:/www.kadea.academy/"
+    },
+    {
+        "name": "BNP",
+        "logo":"src/assets/img/Partenaires/BNP.png",
+        "url": "https:/www.kadea.academy/"
+    }
+
+ ]
+   
