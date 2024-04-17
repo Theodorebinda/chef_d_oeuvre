@@ -8,7 +8,7 @@ function Partenaires() {
     dots: false,
     infinite: true,
     speed: 1000,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -16,9 +16,9 @@ function Partenaires() {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...settings} className="flex items-center p-[20px]">
       {partenaires?.map((partenaire, index) => (
-        <div key={index} className="m-[50px]">
+        <div key={index} className="h-[]">
           <img src={partenaire.logo} alt={partenaire.name} />
         </div>
       ))}

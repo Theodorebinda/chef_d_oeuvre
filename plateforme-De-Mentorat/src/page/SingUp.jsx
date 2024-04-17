@@ -1,6 +1,6 @@
 function SignUp() {
   return (
-    <div>
+    <div className="pt-16">
       <h2>Inscription</h2>
       <form>
         <div>
