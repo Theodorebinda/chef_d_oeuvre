@@ -7,24 +7,24 @@ function HiroSection() {
         <div className=" w-2/4 p-[20px]">
           <div className="justify-end">
             <img
-              className="w-[150px] "
-              src="src\assets\img\background\1A1_controlrocks-14-2.svg"
+              className="w-[200px] "
+              src="src\assets\img\background\1A1_controlrocks-14.svg"
               alt=""
             />
           </div>
           <div className="mr-[30px] text-center">
-            <h4 className="text-3xl font-bold p-[20px]">
-              Je suis étudiant et j ai besoin d accompagnement
+            <h4 className="text-3xl font-bold pb-[20px]">
+              {"Je suis étudiant et j'ai besoin d accompagnement"}
             </h4>
             <Link to="/singup">
-              <button className="border border-black rounded-md px-[20px] py-[10px] bg-[#FFDF00]">
-                Je m inscrit
+              <button className="border  rounded-md px-[20px] py-[10px] hover:text-black  hover:font-bold bg-[#FFDF00]">
+                {"Je m'inscrit"}
               </button>
             </Link>
           </div>
-          <div className="flex  justify-between">
+          <div className="flex  justify-between items-center pt-0">
             <img
-              className="w-[200px] ml-[15%] mb-6"
+              className="w-[150px] ml-[15%]"
               src="src\assets\img\background\1A1_controlrocks-14-2.svg"
               alt=""
             />
@@ -43,12 +43,12 @@ function HiroSection() {
               alt=""
             />
           </div>
-          <div className="mt-[4%]">
-            <h4 className="text-3xl font-bold  bg-gradient-to-r p-[20px]">
-              Je suis un professionnel et je souhaite m engager
+          <div className="mt-[5%]">
+            <h4 className="text-3xl font-bold  p-[20px]">
+              {" Je suis un professionnel et je souhaite m'engager"}
             </h4>
             <Link to="/singup">
-              <button className="border border-black rounded-md px-[20px] py-[10px] bg-[#FFDF00]">
+              <button className="border rounded-md px-[20px] py-[10px]  hover:text-black  hover:font-bold bg-[#FFDF00]">
                 Devenir Mentor
               </button>
             </Link>

@@ -1,35 +1,41 @@
 function AboutSection() {
   return (
     <>
-      <div className="flex flex-col gap-[50px]">
+      <div className="flex flex-col gap-y-6 w-full">
         <div className="flex">
-          <img
-            className="w-[80px]"
-            src="src\assets\img\background\1A1_controlrocks-14-2.svg"
-            alt=""
-          />
-          <div className="flex flex-col justify-center text-center gap-[20px] w-[90%] m-auto">
-            <h4 className="text-3xl font-bold ">SAMBA.ORG C’EST QUOI?</h4>
+          <div className="flex flex-col justify-center text-center gap-[20px] w-[60%] m-auto">
+            <h4 className="text-3xl font-bold ">MENTOR CONNECT C’EST QUOI?</h4>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus
-              ratione qui incidunt, similique, laboriosam quaerat consequuntur
-              consectetur rerum vel ex culpa eveniet fuga velit, non deserunt
-              enim rem aperiam reprehenderit placeat quidem tenetur. Voluptates
-              neque ducimus nemo doloribus, ab.
+              Une plateforme gratuite de mentorat pour que les jeunes soient
+              accompagnés par des professionnels dans la réussite de leurs
+              études et leur insertion dans le monde du travail.
             </p>
           </div>
         </div>
         <div>
           <div className="flex flex-col justify-center  text-center  gap-[20px] items-center">
-            <h2 className="font-bold">Découvrez le parcours de nos binômes</h2>
-            <div className="w-[800px] h-[500px] bg-[#f5f5f5]"></div>
+            <span className="font-bold text-xl">
+              Découvrez le parcours de nos binômes
+            </span>
+            <div className="flex w-full justify-between">
+              <img
+                className="w-[130px] ml-6"
+                src="src\assets\img\background\1A1_controlrocks-29.svg"
+                alt=""
+              />
+              <iframe
+                className="w-[50%] h-[300px]"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="YouTube video player"
+              ></iframe>
+              <img
+                className="w-[150px] mr-6"
+                src="src\assets\img\background\1A1_controlrocks-91 (1).svg"
+                alt=""
+              />
+            </div>
           </div>
-          <div className="flex justify-start gap-[30%]">
-            <img
-              className="w-[130px]"
-              src="src\assets\img\background\1A1_controlrocks-29.svg"
-              alt=""
-            />
+          <div className="flex justify-center gap-[30%]">
             <img
               className="w-[200px]"
               src="src\assets\img\background\1A1_controlrocks_jeune-pro.svg"

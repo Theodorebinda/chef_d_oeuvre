@@ -6,7 +6,7 @@ import PartenaireSection from "../components/PartenaireSection";
 
 function Home() {
   return (
-    <div className="pt-16">
+    <div className="pt-12">
       <HiroSection />
       <AboutSection />
       <PartenaireSection />

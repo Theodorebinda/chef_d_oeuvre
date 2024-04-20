@@ -1,20 +1,20 @@
+import Footer from "../components/Footer";
+import LoginForm from "../components/LoginForm";
+
 function Login() {
   return (
-    <div className="pt-16">
-      <h2>Connexion</h2>
-      <form>
-        <div>
-          <label htmlFor="email">Email :</label>
-          <input type="email" id="email" name="email" />
+    <div className=" flex max-h-full flex-col pt-20 bg-[#F5F5F5]">
+      <div className="flex justify-end items-center pb-20">
+        <div className="w-[40%]  ">
+          <LoginForm />
         </div>
-        <div>
-          <label htmlFor="password">Mot de passe :</label>
-          <input type="password" id="password" name="password" />
+        <div className="w-[30%]">
+          <img className="" src="src\assets\img\background\arrow2.svg" alt="" />
         </div>
-        <div>
-          <button type="submit">Se connecter</button>
-        </div>
-      </form>
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }

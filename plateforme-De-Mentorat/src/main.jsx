@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         element: <Dashbord />,
       },
       {
-        path: "/singup",
+        path: "/singUp",
         element: <SignUp />,
       },
       {

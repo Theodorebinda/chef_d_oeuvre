@@ -2,7 +2,7 @@ function FaqSection() {
   return (
     <>
       <div>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center gap-y-6 ">
           <div className="w-[250px]">
             <img
               src="src\assets\img\background\1A1_controlrocks-70 (1).svg"
@@ -23,7 +23,7 @@ function FaqSection() {
               </li>
             </ul>
           </div>
-          <div className="w-[100px]">
+          <div className="w-[250px]">
             <img
               src="src\assets\img\background\1A1_controlrocks-03.svg"
               alt=""
