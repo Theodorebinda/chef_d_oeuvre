@@ -5,10 +5,11 @@ import Dashbord from "./page/Dashbord";
 import ErrorPage from "./page/ErrorPage";
 import Home from "./page/Home";
 import Profil from "./page/Profil";
-
 import Layout from "./components/Layout";
-import SignUp from "./page/SingUp";
 import Login from "./page/Login";
+import SingUpAll from "./components/singUp/singUp";
+import MentoréForm from "./components/singUp/Mentoré";
+import SingUpMentor from "./page/SingUpMentor";
 
 const router = createBrowserRouter([
   {
@@ -29,8 +30,16 @@ const router = createBrowserRouter([
         element: <Dashbord />,
       },
       {
-        path: "/singUp",
-        element: <SignUp />,
+        path: "/singUpAll",
+        element: <SingUpAll />,
+      },
+      {
+        path: "/singUpMentor",
+        element: <SingUpMentor />,
+      },
+      {
+        path: "/singUpMentoré",
+        element: <MentoréForm />,
       },
       {
         path: "/login",

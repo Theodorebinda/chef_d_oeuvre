@@ -14,9 +14,9 @@ function HiroSection() {
           </div>
           <div className="mr-[30px] text-center">
             <h4 className="text-3xl font-bold pb-[20px]">
-              {"Je suis étudiant et j'ai besoin d accompagnement"}
+              {"Je suis étudiant et j'ai besoin d'accompagnement"}
             </h4>
-            <Link to="/singup">
+            <Link to="/singUpMentoré">
               <button className="border  rounded-md px-[20px] py-[10px] hover:text-black  hover:font-bold bg-[#FFDF00]">
                 {"Je m'inscrit"}
               </button>
@@ -47,9 +47,9 @@ function HiroSection() {
             <h4 className="text-3xl font-bold  p-[20px]">
               {" Je suis un professionnel et je souhaite m'engager"}
             </h4>
-            <Link to="/singup">
+            <Link to="/singUpMentor">
               <button className="border rounded-md px-[20px] py-[10px]  hover:text-black  hover:font-bold bg-[#FFDF00]">
-                Devenir Mentor
+                {"Devenir Mentor"}
               </button>
             </Link>
           </div>

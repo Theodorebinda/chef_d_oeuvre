@@ -21,7 +21,7 @@ function LoginForm() {
         <h2 className="text-2xl font-bold  text-center">Connexion</h2>
         <span className="text-sm">
           {"Besoin d'un compte Mentor Connect ? "}
-          <Link className="text-blue-500 font-bold" to="/singUp">
+          <Link className="text-blue-500 font-bold" to="/singUpAll">
             {" "}
             Créer un compte
           </Link>

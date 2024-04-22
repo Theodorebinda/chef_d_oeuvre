@@ -1,8 +1,8 @@
-import AboutSection from "../components/AboutSection";
-import FaqSection from "../components/FaqSection";
-import Footer from "../components/Footer";
-import HiroSection from "../components/HiroSection";
-import PartenaireSection from "../components/PartenaireSection";
+import AboutSection from "../components/landingPage/AboutSection";
+import FaqSection from "../components/landingPage/FaqSection";
+import Footer from "../components/landingPage/Footer";
+import HiroSection from "../components/landingPage/HiroSection";
+import PartenaireSection from "../components/landingPage/PartenaireSection";
 
 function Home() {
   return (
