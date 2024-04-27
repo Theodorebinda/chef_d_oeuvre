@@ -9,7 +9,7 @@ export default function Ressources() {
   ));
   return (
     <>
-      <span className="">{ressourceSessions}</span>
+      <span className="w-1/4">{ressourceSessions}</span>
     </>
   );
 }

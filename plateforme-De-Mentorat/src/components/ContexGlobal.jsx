@@ -18,6 +18,7 @@ const ContextData = ({ children }) => {
         dataPartenaire,
         dataSessions,
         dataReunion,
+        setDataReunion,
       }}
     >
       {children}

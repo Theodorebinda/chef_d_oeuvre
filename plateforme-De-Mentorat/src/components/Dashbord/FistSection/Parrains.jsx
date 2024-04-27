@@ -3,12 +3,9 @@ import { ContextGlobal } from "../../ContexGlobal";
 export default function Parrains() {
   const { dataMentoree } = useContext(ContextGlobal);
   return (
-    <div className="w-[250px] p-3 ">
+    <div className="w-[200px] flex flex-col items-center border-r py-3 px-2  rounded-md text-[#5D5D5D] text-xs">
       {dataMentoree.map((mentee, index) => (
-        <div
-          key={index}
-          className=" flex flex-col items-center border py-3 px-2 gap-2 rounded-md"
-        >
+        <div key={index} className="flex items-center flex-col gap-3 ">
           <span>Parrains</span>
           <div className="m-[15%]">
             <img src="src\assets\img\Logos\image 1.png" alt="parrains" />

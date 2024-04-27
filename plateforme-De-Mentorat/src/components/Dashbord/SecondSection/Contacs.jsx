@@ -16,7 +16,7 @@ export default function Contacts() {
             <span key={index}>{session.contacts.length}</span>
           ))}{" "}
         </span>
-        <span>Point</span>
+        <span>Contact</span>
       </div>
     </div>
   );

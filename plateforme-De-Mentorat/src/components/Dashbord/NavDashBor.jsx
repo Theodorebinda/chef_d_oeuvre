@@ -1,13 +1,13 @@
 function NavDashBord() {
   return (
-    <div className="flex flex-col  ml-8 rounded-xl p-3 bg-[#34519D] ">
+    <div className="flex flex-col rounded-xl py-3 bg-[#34519D] ">
       <div className="flex justify-start my-2 ">
         <img
-          className="px-6"
+          className="px-4"
           src="src\assets\img\Logos\LogoDashBord\Vector (1).svg"
           alt=""
         />
-        <h4 className="font-semibold text-[white]">Tableau de Bord</h4>
+        <h4 className="font-semibold text-[white] text-xs">Tableau de Bord</h4>
       </div>
       <div>
         <div className="flex flex-col gap-8 justify-start ml-9">

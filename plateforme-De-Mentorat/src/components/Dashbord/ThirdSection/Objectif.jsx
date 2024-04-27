@@ -42,17 +42,24 @@ function Objectif() {
   };
 
   return (
-    <div>
-      <h2>Objectif (2)</h2>
-      <span>Fixe un nouvel objectif</span>
-      <button type="button" onClick={handleOpenModal}>
-        +
-      </button>
+    <div className="flex flex-col justify-normal   border-x  py-3 rounded-md  w-1/2 px-2">
+      <div className="sticky top-0 ">
+        <h2>Objectif (2)</h2>
+        <span className="flex justify-between items-center border-b-2 py-2 pr-4 text-xs">
+          <span>Fixe un nouvel objectif</span>
+          <button
+            className="bg-[#848484] py-1 px-2  rounded-md shadow-md"
+            type="button"
+            onClick={handleOpenModal}
+          >
+            +
+          </button>
+        </span>
+      </div>
       {showModal && (
         <Modal>
           <h2>Ajouter un Objectif</h2>
           <button type="button" onClick={handleCloseModal}>
-            {" "}
             X
           </button>
           <form onSubmit={handleSubmit}>
@@ -68,12 +75,13 @@ function Objectif() {
               />
             </label>
             <button type="submit">Ajouter</button>
+            {handleCloseModal}
           </form>
         </Modal>
       )}
       <ul>
         {objectifs.map((objectif) => (
-          <li key={objectif.id}>
+          <li className="text-xs" key={objectif.id}>
             <strong>{objectif.titre}:</strong> {objectif.description}
           </li>
         ))}

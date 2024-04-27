@@ -30,21 +30,26 @@ export default function ProfileSection() {
     dataMentoree[0]
   );
   return (
-    <div className="w-auto p-3">
+    <div className="w-full border-l py-3 px-6 rounded-md  ">
       {dataMentoree?.map((mentee, index) => (
-        <div
-          key={index}
-          className=" flex flex-col items-center border py-3 px-6 gap-2 rounded-md"
-        >
-          <span>{mentee.prenom}</span>
-          <div className="w-[70px] h-[70px] bg-slate-600 rounded-3xl"></div>
+        <div className="flex flex-col items-center gap-2" key={index}>
+          <span className="text-[#5D5D5D] text-xs">{mentee.prenom}</span>
+          <div className="w-16 h-16 border border-[#34519D] rounded-full flex items-center justify-center">
+            <img
+              className="object-cover h-full w-full rounded-full"
+              src={mentee.avatar}
+              alt="profil"
+            />
+          </div>
 
-          <span>Completer a {pourcentageRemplissage.toFixed(2)}%</span>
+          <span className="text-[#5D5D5D] text-xs ">
+            Completer a {pourcentageRemplissage.toFixed(2)}%
+          </span>
           <div className="flex justify-between gap-2">
-            <button className="rounded border border-[#000] px-2 py-1">
+            <button className="rounded border  border-[#34519D] shadow-xl text-[#34519D] text-xs px-2 py-1">
               {"modifier"}
             </button>
-            <button className="rounded border border-[#000] px-2 py-1">
+            <button className="rounded border  border-[#34519D] shadow-xl text-[#34519D] text-xs px-2 py-1">
               {"consulter"}
             </button>
           </div>

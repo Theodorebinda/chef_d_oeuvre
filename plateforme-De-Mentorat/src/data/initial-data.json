@@ -3,12 +3,12 @@
     {
       "nom":"SAMBA",
       "prenom":"Theodore",
-      "avatar":"",
+      "avatar":"src/assets/img/Logos/LogoDashBord/DSC_6846~2.jpg",
       "age": 25,
       "domaine_etude": "Informatique",
       "etablissement_enseignement": "Université de Paris",
       "details": "Développement d'applications web en utilisant React et Node.js",
-      "objectifs_professionnels": "Devenir chef de projet en technologies de l'information",
+      "objectifs_professionnels": ["Devenir chef de projet en technologies de l'information"],
       "competences_developper": ["Gestion de projet", "Leadership"],
       "interets": ["Technologie", "Musique", "Randonnée"],
       "email": "theodore.binda@gmail.com",
@@ -16,7 +16,7 @@
       "adresse": "123 Rue de l'Exemple, 443 bandal",
       "code_postal": "1207",
       "ville": "kinshasa",
-      "pays": "RDC",
+      "pays": "Republique Democratique du Congo",
       "feedback_evaluation":["Acquérir des compétences en gestion et leadership","Feedback régulier et évaluations mensuelles"]
 
     }
@@ -98,19 +98,26 @@
   "id":"1",
   "SessionId":"12345",
   "titre": "Réunion 1",
-  "date": "2024-05-01T09:00:00Z"
+  "date": "2024-05-01T09:00:00Z",
+  "time": "09:00:00",
+  "location": "Kinshasa"
+
 },
 {
   "id":"2",
   "SessionId":"1234",
   "titre": "Réunion 1",
-  "date": "2024-05-01T09:00:00Z"
+  "date": "2024-05-01T09:00:00Z",
+  "time": "09:00:00",
+  "location": "Kinshasa"
 },
 {
   "id":"3",
   "SessionId":"123",
   "titre": "Réunion 1",
-  "date": "2024-05-01T09:00:00Z"
+  "date": "2024-05-01T09:00:00Z",
+  "time": "09:00:00",
+  "location": "Kinshasa"
 }
 ]
 }

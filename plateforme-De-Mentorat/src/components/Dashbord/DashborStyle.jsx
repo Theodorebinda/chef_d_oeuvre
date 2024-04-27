@@ -3,9 +3,9 @@ import Main from "./main";
 
 function DashbordStyle() {
   return (
-    <div className=" bg-white">
-      <div className=" flex justify-center">
-        <div className="w-1/4">
+    <div className=" bg-white py-5 px-3  rounded-lg">
+      <div className=" flex ">
+        <div className="w-1/6">
           <NavDashBord />
         </div>
         <div className="w-full">

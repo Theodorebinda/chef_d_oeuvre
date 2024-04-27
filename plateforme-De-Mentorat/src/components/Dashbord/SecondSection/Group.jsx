@@ -17,7 +17,7 @@ function Groupe() {
         <span>
           {dataSessions?.map((session, index) => (
             <span key={index}>{session.groupes.length}</span>
-          ))}{" "}
+          ))}
         </span>
         <span>Groupes</span>
       </div>

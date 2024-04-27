@@ -7,7 +7,7 @@ import Objectif from "./Objectif";
 export default function ThirdSection() {
   const { dataSessions } = useContext(ContextGlobal);
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between p-3  flex-wrap ">
       <Ressources />
       <Reunions />
       <Objectif />
