@@ -10,9 +10,11 @@ const MentorForm = () => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center gap-2">
+      <div className="flex flex-col justify-center items-center gap-2 ">
         <h1 className="text-2xl font-bold  text-center">Créer un compte</h1>
-        <span className="text-sm">{"Créer votre compte comme mentor"}</span>
+        <span className="text-sm text-[#5D5D5D] font-semibold">
+          {"Créer votre compte comme mentor"}
+        </span>
         <div className="w-[44%] h-[8px] rounded-full bg-gradient-to-r from-[#FF0000]  via-[#F2CF01] to-[#0000FF] "></div>
       </div>
 
@@ -20,8 +22,8 @@ const MentorForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col  max-w-lg mx-auto mt-8  bg-white rounded-3xl drop-shadow-2xl shadow-2xl p-4"
       >
-        <div className="flex justify-between mb-2">
-          <div className="">
+        <div className="flex justify-between gap-3 mb-2 ">
+          <div className="flex flex-col w-full">
             <label htmlFor="firstName" className="text-xs font-medium">
               {"Prénom"}
             </label>
@@ -38,8 +40,8 @@ const MentorForm = () => {
               </p>
             )}
           </div>
-          <div className="">
-            <label className="text-xs font-medium " htmlFor="name">
+          <div className="flex flex-col w-full ">
+            <label className=" text-xs font-medium " htmlFor="name">
               {"Name de famille"}
             </label>
             <input
@@ -76,8 +78,8 @@ const MentorForm = () => {
           )}
         </div>
         <div className="flex justify-between gap-3">
-          <div className="mb-4">
-            <label className="text-xs font-medium" htmlFor="password">
+          <div className=" flex flex-col w-full mb-4">
+            <label className="text-xs font-medium w-full" htmlFor="password">
               Mot de passe
             </label>
             <input
@@ -88,8 +90,8 @@ const MentorForm = () => {
               placeholder="Entrez votre mot de passe"
             />
           </div>{" "}
-          <div className="mb-4">
-            <label className="text-xs font-medium" htmlFor="password">
+          <div className="flex flex-col w-full mb-4">
+            <label className="text-xs font-medium " htmlFor="password">
               Confirmation de mot de passe
             </label>
             <input
@@ -101,18 +103,18 @@ const MentorForm = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col my-4 ">
+        <div className="flex flex-col my-4  ">
           <label className="text-xs font-medium mb-4">
             {"Sur quelle thematiques souhaitez vous accompagner un etudiant ?"}
           </label>
           <div className=" flex flex-col gap-1   space-y-2">
-            <label className=" flex items-center text-xs font-medium text-gray-600">
+            <label className=" flex items-center text-[11px] font-medium text-gray-600">
               <input type="checkbox" {...register("discoverSector")} />
               <span className="ml-2">
                 {"Faire decouvrir mon secteur d’activité"}
               </span>
             </label>
-            <label className="text-xs font-medium text-gray-600">
+            <label className="text-[11px] font-medium text-gray-600">
               <input type="checkbox" {...register("discoverSector")} />
               <span className="ml-2">
                 {
@@ -120,13 +122,13 @@ const MentorForm = () => {
                 }
               </span>
             </label>
-            <label className="text-xs font-medium text-gray-600">
+            <label className="text-[11px] font-medium text-gray-600">
               <input type="checkbox" {...register("discoverSector")} />
               <span className="ml-1">
                 {"Contribuer a la motivation de l’etudiant"}
               </span>
             </label>
-            <label className="text-xs font-medium text-gray-600">
+            <label className="text-[11px] font-medium text-gray-600">
               <input type="checkbox" {...register("discoverSector")} />
               <span className="ml-1 text-left ">
                 {
@@ -162,7 +164,7 @@ const MentorForm = () => {
               {...register("pays")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="pays"
-              type="contries"
+              type="pays"
               placeholder="Entrez votre pays"
             />
           </div>
@@ -179,9 +181,9 @@ const MentorForm = () => {
             placeholder="Entrez votre province"
           />
         </div>
-        <div className="flex">
-          <div className="">
-            <label className="text-xs " htmlFor="Cursus">
+        <div className="flex justify-between gap-3">
+          <div className="flex flex-col w-full">
+            <label className="text-xs " htmlFor="cursus">
               Cursus
             </label>
             <input
@@ -192,47 +194,47 @@ const MentorForm = () => {
               placeholder="Entrez votre cursus"
             />
           </div>
-          <div className="mb-4">
+          <div className="flex flex-col w-full mb-4">
             <label className="font-medium text-xs " htmlFor="province">
               {" Nom de diplome"}
             </label>
             <input
               {...register("province")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="experience"
+              id="province"
               type="text"
               placeholder="Veillez entrez votre province"
             />
           </div>
         </div>
-        <div className="flex">
-          <div className="mb-4">
+        <div className="flex justify-between gap-3 ">
+          <div className="flex flex-col w-full">
             <label className="text-xs" htmlFor="experience">
               {"Année d'obtention"}
             </label>
             <input
-              {...register("experience")}
+              {...register("obtention")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="experience"
+              id="obtention"
               type="text"
               placeholder="Entrez votre année d'obtention"
             />
           </div>
-          <div className="mb-4">
-            <label className="text-xs " htmlFor="experience">
+          <div className="flex flex-col w-full mb-4">
+            <label className="text-xs " htmlFor="etablissement">
               {"Etablissement d'obtention de diplome"}
             </label>
             <input
-              {...register("experience")}
+              {...register("etablissement")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="experience"
+              id="etablissement"
               type="text"
               placeholder="Entrez le nom d'etablissement"
             />
           </div>
         </div>{" "}
-        <div className="flex">
-          <div className="mb-4">
+        <div className="flex justify-between gap-3">
+          <div className="flex flex-col w-full mb-4">
             <label className="text-xs" htmlFor="experience">
               Filiere
             </label>
@@ -244,7 +246,7 @@ const MentorForm = () => {
               placeholder="Entrez votre filiere"
             />
           </div>
-          <div className="mb-4">
+          <div className="flex flex-col w-full mb-4">
             <label className="text-xs " htmlFor="experience">
               {"Secteur d'activité de votre metier"}
             </label>
@@ -258,8 +260,8 @@ const MentorForm = () => {
           </div>
         </div>
         <div>
-          <div className="flex">
-            <div className="mb-4">
+          <div className="flex justify-between gap-2">
+            <div className="flex flex-col w-full mb-4">
               <label className=" text-xs " htmlFor="poste">
                 Intiluler de poste
               </label>
@@ -271,7 +273,7 @@ const MentorForm = () => {
                 placeholder="Entrez votre poste"
               />
             </div>
-            <div className="mb-4">
+            <div className="flex flex-col w-full mb-4">
               <label className=" text-xs" htmlFor="entreprise">
                 {"Votre entreprise"}
               </label>
@@ -280,10 +282,10 @@ const MentorForm = () => {
                 className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="experience"
                 type="text"
-                placeholder="Le nom de votre entreprise"
+                placeholder="Votre entreprise"
               />
             </div>
-            <div className="mb-4">
+            <div className="flex flex-col w-full mb-4">
               <label className="text-xs" htmlFor="secteur d'activité">
                 {"Son secteur d’activité"}
               </label>
@@ -292,14 +294,14 @@ const MentorForm = () => {
                 className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3  text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="activité"
                 type="text"
-                placeholder="L'activité de votre entreprise"
+                placeholder="Activité de l'entreprise"
               />
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="m-auto w-1/2">
           <button
-            className="bg-[#34519D] hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-[#FFDF00] hover:bg-[#fef5bd] w-full text-blue-600 font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Valider

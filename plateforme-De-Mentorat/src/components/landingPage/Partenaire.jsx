@@ -1,9 +1,11 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import partenaires from "../../data/partenaire.json";
+import { useContext } from "react";
+import { ContextGlobal } from "../ContexGlobal";
 
 function Partenaires() {
+  const { dataPartenaire } = useContext(ContextGlobal);
   const settings = {
     dots: false,
     infinite: true,
@@ -17,7 +19,7 @@ function Partenaires() {
 
   return (
     <Slider {...settings} className="flex items-center p-[20px]">
-      {partenaires?.map((partenaire, index) => (
+      {dataPartenaire?.map((partenaire, index) => (
         <div key={index} className="h-[]">
           <img src={partenaire.logo} alt={partenaire.name} />
         </div>

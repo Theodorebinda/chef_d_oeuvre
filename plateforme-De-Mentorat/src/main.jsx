@@ -10,6 +10,7 @@ import Login from "./page/Login";
 import SingUpAll from "./components/singUp/singUp";
 import MentoréForm from "./components/singUp/Mentoré";
 import SingUpMentor from "./page/SingUpMentor";
+import ContextData from "./components/ContexGlobal";
 
 const router = createBrowserRouter([
   {
@@ -51,7 +52,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ContextData>
+      <RouterProvider router={router} />
+    </ContextData>
   </React.StrictMode>
 );
 ErrorPage;
