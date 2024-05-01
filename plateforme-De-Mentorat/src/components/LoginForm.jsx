@@ -7,9 +7,19 @@ function LoginForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    // Ici, tu pourrais ajouter le code pour connecter l'utilisateur
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post("http://localhost:3000/", data);
+      console.log("Login successful:", response.data);
+      localStorage.setItem("token", response.data.token);
+      // Redirection ou mise à jour de l'état de l'application pour refléter que l'utilisateur est connecté
+    } catch (error) {
+      console.error(
+        "Login failed:",
+        error.response ? error.response.data : "Server error"
+      );
+    }
   };
 
   return (

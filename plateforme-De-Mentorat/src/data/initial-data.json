@@ -1,11 +1,12 @@
 {
   "mentoree":[
     {
+      "id": 1,
       "nom":"SAMBA",
       "prenom":"Theodore",
       "avatar":"src/assets/img/Logos/LogoDashBord/DSC_6846~2.jpg",
       "age": 25,
-      "domaine_etude": "Informatique",
+      "domaine_etude": "",
       "etablissement_enseignement": "Université de Paris",
       "details": "Développement d'applications web en utilisant React et Node.js",
       "objectifs_professionnels": ["Devenir chef de projet en technologies de l'information"],
@@ -76,8 +77,26 @@
  "sessions": [
   {
     "sessionId": "123456",
-    "idMentor": "m001",
-    "idMentoree": "s001",
+    "idMentor": 1,
+    "idMentoree": 1,
+    "fieldOfInterest": "JavaScript",
+    "date": "2024-05-01T14:00:00Z",
+    "duration": "60 minutes",
+    "cours":[],
+    "ressources": ["code cademy", "open classe room","Kadea online", "w3c online"],
+    "contacts":[1],
+    "groupes":[],
+    "points":200,
+    "goals": [
+      "Comprendre les promesses en JavaScript",
+      "Exercices sur les callbacks et async/await"
+    ],
+    "notes": "Session prévue après le module de base sur JavaScript."
+  },
+  {
+    "sessionId": "1234",
+    "idMentor": "m002",
+    "idMentoree": "s002",
     "fieldOfInterest": "JavaScript",
     "date": "2024-05-01T14:00:00Z",
     "duration": "60 minutes",

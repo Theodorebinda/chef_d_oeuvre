@@ -6,6 +6,7 @@ function Objectif() {
   const [description, setDescription] = useState("");
   const [objectifs, setObjectifs] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleTitreChange = (e) => {
     setTitre(e.target.value);
@@ -41,10 +42,14 @@ function Objectif() {
     setShowModal(false);
   };
 
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
+
   return (
     <div className="flex flex-col justify-normal   border-x  py-3 rounded-md  w-1/2 px-2">
       <div className="sticky top-0 ">
-        <h2>Objectif (2)</h2>
+        <h2>Objectif ({objectifs.length})</h2>
         <span className="flex justify-between items-center border-b-2 py-2 pr-4 text-xs">
           <span>Fixe un nouvel objectif</span>
           <button
@@ -81,8 +86,16 @@ function Objectif() {
       )}
       <ul>
         {objectifs.map((objectif) => (
-          <li className="text-xs" key={objectif.id}>
-            <strong>{objectif.titre}:</strong> {objectif.description}
+          <li className=" flex justify-between text-xs" key={objectif.id}>
+            <label className="flex gap-3">
+              <input
+                type="checkbox"
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+              />
+              <strong>{objectif.titre}:</strong> {objectif.description}
+            </label>
+            {isChecked && <p>Objectif Atteint!</p>}
           </li>
         ))}
       </ul>

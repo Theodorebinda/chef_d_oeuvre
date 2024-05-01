@@ -11,6 +11,7 @@ import SingUpAll from "./components/singUp/singUp";
 import MentoréForm from "./components/singUp/Mentoré";
 import SingUpMentor from "./page/SingUpMentor";
 import ContextData from "./components/ContexGlobal";
+import Chat from "./components/Discussion";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/dashbord",
         element: <Dashbord />,
+      },
+      {
+        path: "/message",
+        element: <Chat />,
       },
       {
         path: "/singUpAll",

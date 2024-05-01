@@ -62,7 +62,6 @@ export default function ProgrammerReunion() {
               <div className="pt-[30px]">
                 <div className="flex justify-between">
                   <h2>Programmer une Réunion</h2>{" "}
-                  <button onClick={handleCloseModal}>X</button>
                 </div>
 
                 <form onSubmit={handleSubmit}>

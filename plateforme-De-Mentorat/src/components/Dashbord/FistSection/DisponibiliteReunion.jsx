@@ -46,7 +46,7 @@ export default function DisponibiliteReunion() {
             <div className="flex flex-col items-center text-xs text-[#5D5D5D] ">
               <span>{moment(event.start).format("dddd")}</span>
               <li key={index}>
-                {moment(event.start).format("HH:mm A")}
+                {moment(event.start).format("HH:mm A - ")}
                 {moment(event.end).format("HH:mm A")}
                 <button onClick={() => handleDeleteEvent(index)}>
                   <img src="src\assets\img\Logos\Vector (3).png" alt="" />
