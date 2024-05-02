@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Users" ALTER COLUMN "tel" SET DATA TYPE VARCHAR(15);

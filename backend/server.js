@@ -1,43 +1,62 @@
 const express = require('express');
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient()
-const server = express();
+const { PrismaClient } = require('@prisma/client');
 
+const prisma = new PrismaClient();
+const Server = express();
+const port = 3001;
 
-const users = await prisma.users.findMany();
-console.log(users);
+Server.use(express.json());
+Server.use(express.urlencoded({ extended: true }));
 
-
-server.get('/', (req, res) => {
-    res.send('Hello World!');
+Server.get('/users', async (req, res) => {
+  try {
+    const items = await prisma.users.findMany();
+    res.json(items);
+  } catch (err) {
+    console.error('Error fetching items', err);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
 });
-server.get('/users', (req, res) => {
-    res.send('users!');
-});
-
-server.get('/users/:handle',  (req, res) => {
-    const handle = req.params.handle; 
-    const users = req.parsedJson.users; 
-
-    // Rechercher l'utilisateur dans la liste des utilisateurs
-    const user = users.find((user) => user.handle === handle);
-    if (!user) {
-        return res.status(404).json({ error: 'Utilisateur non trouvé' });
-    }
-
-    // Renvoyer les détails de l'utilisateur trouvé
-    res.json(user);
-})
-
-server.get('/sessions', (req, res) => {
-    res.send('Session!');
+Server.get('/users', async (req, res) => {
+  try {
+    const items = await prisma.users.findMany();
+    res.json(items);
+  } catch (err) {
+    console.error('Error fetching items', err);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
 });
 
+Server.post('/users', async (req, res) => {
+  const { nom, prenom,email,password,pays,ville,tel,age,thematique,cursus,nomDiplome,anneeDiplome,etablissementDobtention,filiere,secteurDactivite,intitulerDePoste,entreprise,objectifProfessionelle,competenceAdevelopper,interets,domaineDeMentorate,domaineDexpertise,url,Role,Reunion, } = req.body;
+  try {
+    const newItem = await prisma.users.create({
+      data: {
+        nom,
+        prenom,
+        email,
+        password,
+        pays,
+        ville,
+        tel,
+        age,
+        thematique,
+        cursus,
+        nomDiplome,
+        anneeDiplome,
+        etablissementDobtention,
+        filiere,
+      },
+    });
+    res.status(201).json(newItem);
+  } catch (err) {
+    console.error('Error creating item', err);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 
+// Routes pour les opérations PUT et DELETE
 
-
-
-const port = 3001; // Port d'écoute
-server.listen(port, () => {
-    console.log(`Serveur en cours d'exécution sur le port ${port}`);
+Server.listen(port, () => {
+  console.log(`Server est lancée au port:${port}`);
 });

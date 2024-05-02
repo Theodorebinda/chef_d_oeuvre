@@ -16,15 +16,16 @@ datasource db {
 model Users {
   id                      Int         @id @default(autoincrement())
   prenom                  String
+  nom                     String
   email                   String      @unique
   password                String
   pays                    String      @db.VarChar(150)
   ville                   String      @db.VarChar(100)
-  tel                     Int
+  tel                     String      @db.VarChar(15)
   age                     Int
   avatar                  Bytes?
-  thematique              String      @db.VarChar(150)
-  cursus                  String      @db.VarChar(200)
+  thematique              String?     @db.VarChar(150)
+  cursus                  String?     @db.VarChar(200)
   nomDiplome              String?     @db.VarChar(150)
   anneeDiplome            Int?
   etablissementDobtention String?     @db.VarChar(250)
