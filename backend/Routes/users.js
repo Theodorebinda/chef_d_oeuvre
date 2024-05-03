@@ -1,8 +1,13 @@
 const express = require('express');
-const router = express.Router();
-const { getUserMeetings } = require('../controllers/userController');
+const userRouter = express.Router();
+const {getUsers, postUsers} = require('../Controllers/users');
+
+
 
 // Route pour obtenir les réunions d'un utilisateur par son ID
-router.get('/:userId/meetings', getUserMeetings);
+// userRouter.get('/:userId/meetings', getUserMeetings);
+userRouter.get('/users', getUsers).post('/users', postUsers);
 
-module.exports = router;
+
+
+module.exports = userRouter;
