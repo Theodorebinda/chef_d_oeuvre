@@ -4,6 +4,6 @@ const connectRouter = express.Router();
 
 
 
-connectRouter.get('/connecter',getConnect)
+connectRouter.get('/',getConnect)
 
 module.exports = connectRouter;
