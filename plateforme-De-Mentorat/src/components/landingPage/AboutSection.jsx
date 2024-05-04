@@ -20,7 +20,7 @@ function AboutSection() {
             <div className="flex w-full justify-between">
               <img
                 className="w-[130px] ml-6"
-                src="src\assets\img\background\1A1_controlrocks-29.svg"
+                src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834668/1A1_controlrocks-29_dh63lc.svg"
                 alt=""
               />
               <iframe
@@ -30,7 +30,7 @@ function AboutSection() {
               ></iframe>
               <img
                 className="w-[150px] mr-6"
-                src="src\assets\img\background\1A1_controlrocks-91 (1).svg"
+                src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834665/1A1_controlrocks-91_1_uqe4zl.svg"
                 alt=""
               />
             </div>
@@ -38,7 +38,7 @@ function AboutSection() {
           <div className="flex justify-center gap-[30%]">
             <img
               className="w-[200px]"
-              src="src\assets\img\background\1A1_controlrocks_jeune-pro.svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks_jeune-pro_cvczq2.svg"
               alt=""
             />
           </div>

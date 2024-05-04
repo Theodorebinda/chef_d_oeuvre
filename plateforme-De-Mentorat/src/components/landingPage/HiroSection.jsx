@@ -8,7 +8,7 @@ function HiroSection() {
           <div className="justify-end">
             <img
               className="w-[200px] "
-              src="src\assets\img\background\1A1_controlrocks-14.svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-14_tlhfpz.svg"
               alt=""
             />
           </div>
@@ -25,12 +25,12 @@ function HiroSection() {
           <div className="flex  justify-between items-center pt-0">
             <img
               className="w-[150px] ml-[15%]"
-              src="src\assets\img\background\1A1_controlrocks-14-2.svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-14-2_edr27p.svg"
               alt=""
             />
             <img
               className="w-[200px]"
-              src="src\assets\img\background\1A1_controlrocks-08(1).svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-08_1_p7nuwh.svg"
               alt=""
             />
           </div>
@@ -39,7 +39,7 @@ function HiroSection() {
           <div className="justify-end">
             <img
               className="w-[150px] "
-              src="src\assets\img\background\1A1_controlrocks-14-2.svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-14-2_edr27p.svg"
               alt=""
             />
           </div>
@@ -56,12 +56,12 @@ function HiroSection() {
           <div className="flex  justify-between">
             <img
               className="w-[200px] mt-[6%]"
-              src="src\assets\img\background\1A1_controlrocks-73.svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834665/1A1_controlrocks-73_pcm7js.svg"
               alt=""
             />
             <img
               className="w-[200px] mr-[10%] mb-[8%]"
-              src="src\assets\img\background\1A1_controlrocks-14.svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-14_tlhfpz.svg"
               alt=""
             />
           </div>

@@ -5,7 +5,7 @@ function FaqSection() {
         <div className="flex justify-between items-center gap-y-6 ">
           <div className="w-[250px]">
             <img
-              src="src\assets\img\background\1A1_controlrocks-70 (1).svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834664/1A1_controlrocks-70_1_y864ip.svg"
               alt=""
             />
           </div>
@@ -25,7 +25,7 @@ function FaqSection() {
           </div>
           <div className="w-[250px]">
             <img
-              src="src\assets\img\background\1A1_controlrocks-03.svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-03_qzrgcm.svg"
               alt=""
             />
           </div>
