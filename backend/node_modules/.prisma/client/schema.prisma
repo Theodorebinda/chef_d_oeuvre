@@ -1,0 +1,109 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id                      Int         @id @default(autoincrement())
+  prenom                  String
+  email                   String      @unique
+  password                String
+  pays                    String      @db.VarChar(150)
+  ville                   String      @db.VarChar(100)
+  tel                     Int
+  age                     Int
+  avatar                  Bytes?
+  thematique              String      @db.VarChar(150)
+  cursus                  String      @db.VarChar(200)
+  nomDiplome              String?     @db.VarChar(150)
+  anneeDiplome            Int?
+  etablissementDobtention String?     @db.VarChar(250)
+  filiere                 String?     @db.VarChar(100)
+  secteurDactivite        String?     @db.VarChar(100)
+  intitulerDePoste        String?     @db.VarChar(100)
+  entreprise              String?     @db.VarChar(100)
+  objectifProfessionelle  String?     @db.VarChar(150)
+  competenceAdevelopper   String?     @db.VarChar(100)
+  interets                String?     @db.VarChar(100)
+  domaineDeMentorate      String?     @db.VarChar(100)
+  domaineDexpertise       String?     @db.VarChar(200)
+  url                     String?     @db.VarChar(100)
+  Role                    Role[]
+  Reunion                 Reunion[]
+  message                 Message[]
+  connecter               Connecter[]
+  reunionId               Int?
+}
+
+model Role {
+  id         Int     @id @default(autoincrement())
+  mentor     Boolean @default(false)
+  mentee     Boolean @default(false)
+  partenaire Boolean @default(false)
+  user       Users   @relation(fields: [usersId], references: [id])
+  usersId    Int
+}
+
+model Reunion {
+  id         Int          @id @default(autoincrement())
+  sujet      String       @db.VarChar(150)
+  date       Int
+  duree      String?
+  lieu       String
+  users      Users[]
+  message    Message[]
+  session    Sessions[]
+  appartenir Appartenir[]
+  usersId    Int
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  content   String   @db.VarChar(300)
+  Users     Users?   @relation(fields: [usersId], references: [id])
+  usersId   Int?
+  Reunion   Reunion? @relation(fields: [reunionId], references: [id])
+  reunionId Int?
+}
+
+model Sessions {
+  id          Int          @id @default(autoincrement())
+  titre       String       @db.VarChar(50)
+  description String       @db.VarChar(150)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  duree       String       @db.VarChar(30)
+  contacts    String       @db.VarChar(100)
+  point       Int
+  ressources  String       @db.VarChar(100)
+  Reunion     Reunion[]
+  appartenir  Appartenir[]
+  connecter   Connecter[]
+  reunionId   Int?
+}
+
+model Appartenir {
+  id         Int       @id @default(autoincrement())
+  Reunion    Reunion?  @relation(fields: [reunionId], references: [id])
+  reunionId  Int?
+  Sessions   Sessions? @relation(fields: [sessionsId], references: [id])
+  sessionsId Int?
+}
+
+model Connecter {
+  id         Int       @id @default(autoincrement())
+  Sessions   Sessions? @relation(fields: [sessionsId], references: [id])
+  sessionsId Int?
+  Users      Users?    @relation(fields: [usersId], references: [id])
+  usersId    Int?
+}
