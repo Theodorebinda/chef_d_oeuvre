@@ -2,8 +2,8 @@ const prisma = require("../db/prisma");
 
 const getUsers = async (req, res) => {
   try {
-    const sessions = await prisma.sessions.findMany();
-    res.json(sessions);
+    const users = await prisma.users.findMany();
+    res.json(users);
   } catch (err) {
     console.error('Error fetching items', err);
     res.status(500).json({ message: 'Internal Server Error' });

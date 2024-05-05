@@ -47,12 +47,10 @@ model Users {
 }
 
 model Role {
-  id         Int     @id @default(autoincrement())
-  mentor     Boolean @default(false)
-  mentee     Boolean @default(false)
-  partenaire Boolean @default(false)
-  user       Users   @relation(fields: [usersId], references: [id])
-  usersId    Int
+  id      Int    @id @default(autoincrement())
+  nom     String @db.VarChar(10)
+  user    Users  @relation(fields: [usersId], references: [id])
+  usersId Int
 }
 
 model Reunion {
