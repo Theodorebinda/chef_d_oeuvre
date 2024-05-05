@@ -23,7 +23,7 @@ function Footer() {
           <li>
             <img
               className="w-[60px]"
-              src="src\assets\img\Logos\1A1_controlrocks-90.svg"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714910847/dashbord/gonstjiiaihlxnl2e8cm.svg"
               alt=""
             />
           </li>
