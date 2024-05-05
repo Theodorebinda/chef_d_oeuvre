@@ -2,6 +2,6 @@ const express = require('express');
 const reunionRouter = express.Router();
 const { getReunion } = require('../Controllers/reunion');
 
-reunionRouter.get('/reunions',getReunion)
+reunionRouter.get('/',getReunion)
 
 module.exports = reunionRouter;

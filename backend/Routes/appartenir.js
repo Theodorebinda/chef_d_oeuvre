@@ -4,6 +4,6 @@ const appartenirRouter = express.Router();
 
 
 
-appartenirRouter.get('/appartenir', getAppartenir)
+appartenirRouter.get('/', getAppartenir)
 
 module.exports = appartenirRouter;

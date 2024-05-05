@@ -4,6 +4,6 @@ const rolesRouter = express.Router();
 
 
 
-rolesRouter.get('/roles',getRoles)
+rolesRouter.get('/',getRoles)
 
 module.exports = rolesRouter;
