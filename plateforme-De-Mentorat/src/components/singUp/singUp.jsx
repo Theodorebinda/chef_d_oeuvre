@@ -5,7 +5,7 @@ function SingUpAll() {
   return (
     <>
       {" "}
-      <div className="pt-20 pb-3 bg-[#f6f6f6]">
+      <div className="pt-20 pb-3 bg-[#f6f6f6] h-screen">
         <div className="flex flex-col justify-center items-center p-8 rounded-lg drop-shadow-lg bg-white  mx-auto w-[70%]">
           <div className=" flex flex-col items-center text-center  p-8">
             <h4 className="font-bold text-2xl p-6">
