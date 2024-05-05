@@ -8,7 +8,7 @@ function Footer() {
           <Link>
             <img
               className="w-32"
-              src="src\assets\img\Logos\ingoude.png"
+              src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714908826/logo/bsyyh03icd1ryzywupsg.png"
               alt=""
             />
           </Link>

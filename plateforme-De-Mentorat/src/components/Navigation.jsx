@@ -16,7 +16,11 @@ const Navigation = () => {
     <nav className=" ">
       <div className="flex justify-between items-center w-full px-5 border-b-2 border-[#e7e7e7] fixed top-0 z-10 bg-white">
         <Link to="/">
-          <img className="w-32" src="src\assets\img\Logos\ingoude.png" alt="" />
+          <img
+            className="w-32"
+            src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714908826/logo/bsyyh03icd1ryzywupsg.png"
+            alt=""
+          />
         </Link>
         {/* Bouton de menu hamburger */}
         <button
