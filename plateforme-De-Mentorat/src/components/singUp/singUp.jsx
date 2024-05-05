@@ -20,7 +20,7 @@ function SingUpAll() {
               <div className="w-[200px] border px-3 border-sky-500 rounded-sm">
                 <img
                   className="w-[100px] m-auto"
-                  src="src\assets\img\background\1A1_controlrocks-77.svg"
+                  src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834665/1A1_controlrocks-77_dhobs8.svg"
                   alt="Mentoré"
                 />
               </div>
@@ -30,7 +30,7 @@ function SingUpAll() {
               <div className="w-[200px] border p-3 h-[150px] border-sky-500 rounded-sm">
                 <img
                   className="w-[150px] m-auto"
-                  src="src\assets\img\background\1A1_controlrocks-762.svg"
+                  src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834668/1A1_controlrocks-762_c5kkoq.svg"
                   alt="Mentor"
                 />
               </div>
