@@ -1,5 +1,6 @@
 const express = require('express');
 const Server = express();
+require('dotenv').config();
 const userRouter = require('./Routes/users');
 const sessionsRouter = require("./Routes/sessions");
 const reunionRouter = require("./Routes/reunion");
@@ -8,7 +9,7 @@ const connectRouter = require("./Routes/connecter");
 const appartenirRouter = require("./Routes/appartenir");
 const rolesRouter = require("./Routes/roles");
 const checkUserRole = require('./middleware/checkUserRole');
-const port = process.env.PORT||3001;
+const port = process.env.PORT;
 
 
 Server.use(express.Router());
