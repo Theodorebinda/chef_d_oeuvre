@@ -10,7 +10,7 @@ function LoginForm() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:3000/", data);
+      const response = await axios.post("http://localhost:3000/login", data);
       console.log("Login successful:", response.data);
       localStorage.setItem("token", response.data.token);
       // Redirection ou mise à jour de l'état de l'application pour refléter que l'utilisateur est connecté
@@ -40,21 +40,16 @@ function LoginForm() {
       </div>
       <div className="flex   flex-col ">
         <div className=" mb-5">
-          <label
-            htmlFor="username"
-            className="text-sm font-medium text-gray-600"
-          >
-            {"Nom d'utilisateur"}
+          <label htmlFor="email" className="text-sm font-medium text-gray-600">
+            {"Email"}
           </label>
           <input
             type="text"
-            {...register("username", { required: true })}
+            {...register("email", { required: true })}
             className="mt-1 p-2 w-full border-2 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-400 focus:border-[#34519D]"
           />
           {errors.username && (
-            <p className="text-red-500 text-xs italic">
-              {" Le nom d'utilisateur est requis."}
-            </p>
+            <p className="text-red-500 text-xs italic">{"  Email requis."}</p>
           )}
         </div>
 
