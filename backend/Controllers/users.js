@@ -1,4 +1,6 @@
 const prisma = require("../db/prisma");
+const bcrypt = require('bcryptjs');
+
 
 const getUsers = async (req, res) => {
   try {
@@ -12,14 +14,19 @@ const getUsers = async (req, res) => {
 
 
 const postUsers = async (req, res) => {
-  const { nom, prenom,email,password,pays,ville,tel,age,thematique,cursus,nomDiplome,anneeDiplome,etablissementDobtention,filiere,secteurDactivite,intitulerDePoste,entreprise,objectifProfessionelle,competenceAdevelopper,interets,domaineDeMentorate,domaineDexpertise,url,Role,Reunion, } = req.body;
   try {
+  const { nom, prenom,email,password,pays,ville,tel,age,thematique,cursus,nomDiplome,anneeDiplome,etablissementDobtention,filiere,secteurDactivite,intitulerDePoste,entreprise,objectifProfessionelle,competenceAdevelopper,interets,domaineDeMentorate,domaineDexpertise,url,Role,Reunion, } = req.body;
+
+   // Hash the password
+   const hashedPassword = await bcrypt.hash(password, 10);
+
+   // Save the user to the database
     const newUser = await prisma.users.create({
       data: {
         nom,
         prenom,
         email,
-        password,
+        password: hashedPassword,
         pays,
         ville,
         tel,
@@ -32,7 +39,7 @@ const postUsers = async (req, res) => {
         filiere,
       },
     });
-    res.status(201).json(newUser);
+    res.status(201).json(newUser,{ message: 'User registered successfully' });
   } catch (err) {
     console.error('Error creating item', err);
     res.status(500).json({ message: 'Internal Server Error' });
