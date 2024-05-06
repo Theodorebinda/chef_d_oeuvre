@@ -2,6 +2,11 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const prisma = require('../db/prisma');
+require('dotenv').config();
+const secretKey = process.env.SECRET_KEY;
+
+// Utilisez secretKey dans votre application
+
 
 
 const loginPost = async (req, res) => {
@@ -19,7 +24,7 @@ const loginPost = async (req, res) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign({ userId: user.id }, 'your-secret-key', {
+    const token = jwt.sign({ userId: user.id }, secretKey, {
       expiresIn: '1h', // Token expires in 1 hour
     });
 

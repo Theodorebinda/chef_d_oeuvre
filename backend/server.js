@@ -12,8 +12,8 @@ const connectRouter = require("./Routes/connecter");
 const appartenirRouter = require("./Routes/appartenir");
 const rolesRouter = require("./Routes/roles");
 const checkUserRole = require('./middleware/checkUserRole');
-const protectedRouter = require('./Routes/protectedRoute');
 const loginRouter = require('./Routes/login');
+const { verifyToken } = require('./middleware/verifyToken');
 const port = process.env.PORT;
 
 Server.use(bodyParser.json());
@@ -23,13 +23,12 @@ Server.use(express.urlencoded({ extended: true }));
 
 
 Server.use('/register', userRouter);
-Server.use('/sessions', sessionsRouter, checkUserRole);
+Server.use('/sessions', sessionsRouter, checkUserRole, verifyToken);
 Server.use('/reunions',reunionRouter );
 Server.use('/messages', messageRouter);
 Server.use('/connecter', connectRouter);
 Server.use('/appartenir', appartenirRouter);
 Server.use('/roles', rolesRouter);
-Server.use('/protected', protectedRouter);
 Server.use('/login', loginRouter);
 
 
