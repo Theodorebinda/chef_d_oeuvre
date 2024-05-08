@@ -13,7 +13,7 @@ const loginPost = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Find the user by email
+    
     const user = await prisma.users.findUnique({
       where: { email },
     });
@@ -25,7 +25,7 @@ const loginPost = async (req, res) => {
 
     // Generate JWT token
     const token = jwt.sign({ userId: user.id }, secretKey, {
-      expiresIn: '1h', // Token expires in 1 hour
+      expiresIn: '1h', // Token expire dans 1h
     });
 
     res.json({ token });

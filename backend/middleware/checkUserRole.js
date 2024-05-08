@@ -4,15 +4,14 @@ const prisma = require("../db/prisma");
 const checkUserRole = async (req, res, next) => {
     try {
       // Récupérer l'ID de l'utilisateur à partir de la session ou du jeton d'authentification
-      const userId = prisma.connecter.usersId; // Exemple d'accès à l'ID de l'utilisateur à partir d'une session
+      const userId = prisma.connecter.usersId;
   
       // Rechercher l'utilisateur dans la base de données avec ses rôles
       const user = await prisma.users.findUnique({
         where: { id: userId },
-        include: { Role: true } // Inclure les rôles de l'utilisateur
+        include: { Role: true }
       });
-  
-      // Vérifier si l'utilisateur a les rôles requis (par exemple, mentor)
+      // Vérifier si l'utilisateur a les rôles requis (mentor)
       if (user && user.Role.some(role => role.nom === 'mentor')) {
         // L'utilisateur a le rôle requis, passer à la route suivante
         next();
