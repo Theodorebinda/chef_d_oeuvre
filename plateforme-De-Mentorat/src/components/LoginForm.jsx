@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 function LoginForm() {
@@ -10,10 +11,13 @@ function LoginForm() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:3000/login", data);
+      const response = await axios.post("http://localhost:3001/login", {
+        email: data.email,
+        password: data.password,
+      });
+      localStorage.setItem("token", JSON.stringify(response.data));
       console.log("Login successful:", response.data);
-      localStorage.setItem("token", response.data.token);
-      // Redirection ou mise à jour de l'état de l'application pour refléter que l'utilisateur est connecté
+      window.location.href = "/dashbord";
     } catch (error) {
       console.error(
         "Login failed:",
@@ -48,7 +52,7 @@ function LoginForm() {
             {...register("email", { required: true })}
             className="mt-1 p-2 w-full border-2 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-400 focus:border-[#34519D]"
           />
-          {errors.username && (
+          {errors.email && (
             <p className="text-red-500 text-xs italic">{"  Email requis."}</p>
           )}
         </div>

@@ -10,20 +10,23 @@ const ContextData = ({ children }) => {
   const [dataSessions, setDataSessions] = useState([]);
   const [dataReunion, setDataReunion] = useState([]);
 
+  console.log({ dataMentoree });
+
   useEffect(() => {
-    axios.get("http://localhost:3000/mentoree").then((response) => {
+    axios.get("http://localhost:3001/users").then((response) => {
       setDataMentoree(response.data);
       console.log(response.data);
     });
   }, []);
+
   useEffect(() => {
-    axios.get("http://localhost:3000/mentor").then((response) => {
+    axios.get("http://localhost:3001/users").then((response) => {
       setDataMentor(response.data);
       console.log(response.data);
     });
   }, []);
   useEffect(() => {
-    axios.get("http://localhost:3000/partenaire").then((response) => {
+    axios.get("http://localhost:3001/users").then((response) => {
       setDataPartenaire(response.data);
       console.log(response.data);
     });

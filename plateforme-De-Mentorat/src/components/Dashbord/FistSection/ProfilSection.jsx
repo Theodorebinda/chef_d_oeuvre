@@ -5,6 +5,8 @@ import { calculerPourcentageRemplissage } from "../../../utiles/calculeRemplissa
 export default function ProfileSection() {
   const { dataMentoree } = useContext(ContextGlobal);
 
+  console.log({ dataMentoree });
+
   // Calcul du pourcentage de remplissage du profil du mentoré
   const pourcentageRemplissage = calculerPourcentageRemplissage(dataMentoree);
   return (

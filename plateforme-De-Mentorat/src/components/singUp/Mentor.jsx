@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const MentorForm = () => {
@@ -6,7 +7,19 @@ const MentorForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      // Envoyer les données du formulaire à votre serveur
+      const response = await axios.post("http://localhost:3001/users", data);
+
+      // Afficher la réponse du serveur
+      console.log(response.data);
+    } catch (error) {
+      // Gérer les erreurs
+      console.error(error);
+    }
+  };
+  console.log(onSubmit());
 
   return (
     <div>
@@ -29,12 +42,12 @@ const MentorForm = () => {
             </label>
             <input
               type="text"
-              id="firstName"
-              {...register("firstName", { required: true })}
+              id="prenom"
+              {...register("prenom", { required: true })}
               className="shadow appearance-none border border-[#D9D9D9] rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Entrez votre prenom"
             />
-            {errors.firstName && (
+            {errors.prenom && (
               <p className="text-red-500 text-xs italic">
                 {"Le prénom est requis."}
               </p>
@@ -45,13 +58,13 @@ const MentorForm = () => {
               {"Name de famille"}
             </label>
             <input
-              {...register("name", { required: "Name is required" })}
+              {...register("nom", { required: "Nom is required" })}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3  text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="name"
+              id="nom"
               type="text"
               placeholder="Entrez voter nom"
             />
-            {errors.name && (
+            {errors.nom && (
               <p className="text-red-500 text-xs italic">Le nom est requis.</p>
             )}
           </div>
@@ -143,15 +156,11 @@ const MentorForm = () => {
             <label className=" text-xs ">{"Langue"}</label>
             <div className=" flex flex-col mt-1 space-y-2 text-xs">
               <label>
-                <input
-                  className=""
-                  type="checkbox"
-                  {...register("discoverSector")}
-                />
+                <input className="" type="checkbox" {...register("langue")} />
                 <span className="ml-1"> {"Francais"}</span>
               </label>
               <label>
-                <input type="checkbox" {...register("discoverSector")} />
+                <input type="checkbox" {...register("langue")} />
                 <span className="ml-2">{"Anglais"}</span>
               </label>
             </div>
@@ -171,12 +180,12 @@ const MentorForm = () => {
         </div>
         <div className="mb-4">
           <label className="font-medium text-xs " htmlFor="province">
-            {"Province ou territoire"}
+            {"ville"}
           </label>
           <input
-            {...register("province")}
+            {...register("ville")}
             className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="province"
+            id="ville"
             type="text"
             placeholder="Entrez votre province"
           />
@@ -195,28 +204,28 @@ const MentorForm = () => {
             />
           </div>
           <div className="flex flex-col w-full mb-4">
-            <label className="font-medium text-xs " htmlFor="province">
+            <label className="font-medium text-xs " htmlFor="nomDiplome:">
               {" Nom de diplome"}
             </label>
             <input
-              {...register("province")}
+              {...register("nomDiplome")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="province"
               type="text"
-              placeholder="Veillez entrez votre province"
+              placeholder="Nom de votre diplome"
             />
           </div>
         </div>
         <div className="flex justify-between gap-3 ">
           <div className="flex flex-col w-full">
-            <label className="text-xs" htmlFor="experience">
+            <label className="text-xs" htmlFor="anneeDiplome">
               {"Année d'obtention"}
             </label>
             <input
-              {...register("obtention")}
+              {...register("anneeDiplome")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="obtention"
-              type="text"
+              type="number"
               placeholder="Entrez votre année d'obtention"
             />
           </div>
@@ -225,7 +234,7 @@ const MentorForm = () => {
               {"Etablissement d'obtention de diplome"}
             </label>
             <input
-              {...register("etablissement")}
+              {...register("etablissementDobtention:")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="etablissement"
               type="text"
@@ -235,7 +244,7 @@ const MentorForm = () => {
         </div>{" "}
         <div className="flex justify-between gap-3">
           <div className="flex flex-col w-full mb-4">
-            <label className="text-xs" htmlFor="experience">
+            <label className="text-xs" htmlFor="filiere">
               Filiere
             </label>
             <input
@@ -251,9 +260,9 @@ const MentorForm = () => {
               {"Secteur d'activité de votre metier"}
             </label>
             <input
-              {...register("activite")}
+              {...register("secteurDactivite")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="experience"
+              id="secteurDactivite"
               type="text"
               placeholder="Entrez votre secteur d'activité"
             />
@@ -266,9 +275,9 @@ const MentorForm = () => {
                 Intiluler de poste
               </label>
               <input
-                {...register("poste")}
+                {...register("intitulerDePoste")}
                 className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="experience"
+                id="intitulerDePoste"
                 type="text"
                 placeholder="Entrez votre poste"
               />
@@ -286,15 +295,15 @@ const MentorForm = () => {
               />
             </div>
             <div className="flex flex-col w-full mb-4">
-              <label className="text-xs" htmlFor="secteur d'activité">
+              <label className="text-xs" htmlFor="objectifProfessionelle:">
                 {"Son secteur d’activité"}
               </label>
               <input
-                {...register("experience")}
+                {...register("objectifProfessionelle:")}
                 className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3  text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="activité"
+                id="objectifProfessionelle:"
                 type="text"
-                placeholder="Activité de l'entreprise"
+                placeholder="votre objectif Professionelle:"
               />
             </div>
           </div>
