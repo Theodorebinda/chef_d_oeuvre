@@ -1,9 +1,9 @@
 const express = require('express')
-const { authMidlUser } = require('../middleware/register')
+const { logoutPost } = require('../middleware/register')
 const loginRouter = express.Router()
 
 
 
-loginRouter.post("/", authMidlUser)
+loginRouter.post("/", logoutPost)
 
 module.exports = loginRouter

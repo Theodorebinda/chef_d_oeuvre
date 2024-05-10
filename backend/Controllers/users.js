@@ -26,7 +26,7 @@ const postUsers = async (req, res) => {
         nom,
         prenom,
         email,
-        password: hashedPassword,
+        password:hashedPassword,
         pays,
         ville,
         tel,
@@ -39,10 +39,10 @@ const postUsers = async (req, res) => {
         filiere,
       },
     });
-    res.status(201).json(newUser,{ message: 'User registered successfully' });
+    res.status(201).json({newUser, message: 'User registered successfully' });
   } catch (err) {
     console.error('Error creating item', err);
-    res.status(500).json({ message: 'Internal Server Error' });
+    res.status(404).json({ message: 'Internal Server Error' });
   }
 }
   
