@@ -1,25 +1,27 @@
+import { data } from "autoprefixer";
 import axios from "axios";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const MentorForm = () => {
+  const [formData, setFormData] = useState(data);
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+    reset,
+  } = useForm({ defaultValues: formData });
   const onSubmit = async (data) => {
     try {
-      // Envoyer les données du formulaire à votre serveur
       const response = await axios.post("http://localhost:3001/users", data);
-
-      // Afficher la réponse du serveur
       console.log(response.data);
+      alert(`${data.nom} a été enregistré`);
+      window.location.href = "/dashbord";
     } catch (error) {
       // Gérer les erreurs
       console.error(error);
     }
   };
-  console.log(onSubmit());
 
   return (
     <div>
@@ -54,7 +56,7 @@ const MentorForm = () => {
             )}
           </div>
           <div className="flex flex-col w-full ">
-            <label className=" text-xs font-medium " htmlFor="name">
+            <label className=" text-xs font-medium " htmlFor="nom">
               {"Name de famille"}
             </label>
             <input
@@ -104,15 +106,15 @@ const MentorForm = () => {
             />
           </div>{" "}
           <div className="flex flex-col w-full mb-4">
-            <label className="text-xs font-medium " htmlFor="password">
-              Confirmation de mot de passe
+            <label className="text-xs font-medium " htmlFor="phone">
+              télephone
             </label>
             <input
-              {...register("password")}
+              {...register("tel")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3  text-xs text-gray-700  focus:outline-none focus:shadow-outline"
-              id="password"
-              type="password"
-              placeholder="Entrez votre mot de passe"
+              id="phone"
+              type="phone"
+              placeholder="Entrez numero"
             />
           </div>
         </div>
@@ -230,13 +232,13 @@ const MentorForm = () => {
             />
           </div>
           <div className="flex flex-col w-full mb-4">
-            <label className="text-xs " htmlFor="etablissement">
+            <label className="text-xs " htmlFor="etablissementDobtention">
               {"Etablissement d'obtention de diplome"}
             </label>
             <input
-              {...register("etablissementDobtention:")}
+              {...register("etablissementDobtention")}
               className="shadow appearance-none border border-[#D9D9D9]  rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="etablissement"
+              id="etablissementDobtention"
               type="text"
               placeholder="Entrez le nom d'etablissement"
             />

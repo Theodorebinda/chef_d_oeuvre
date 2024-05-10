@@ -1,12 +1,16 @@
 // src/components/Header.jsx
 
 import { Link } from "react-router-dom";
-
 import React, { useState } from "react";
-import MenuHumburger from "./Menuhamburger";
+import LogoutButton from "./LogoutButton";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const isLoggedIn = () => {
+    const token = localStorage.getItem("accessToken");
+    return !!token;
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -56,9 +60,13 @@ const Navigation = () => {
               <li className="border border-blue-500 rounded-sm px-[25px] py-[3px]  hover:bg-blue-600 hover:text-white text-blue-600">
                 <Link to="/singUpMentor">Mentor</Link>
               </li>
-              <li className=" border-blue-500 rounded-sm px-[25px] py-[3px] text-blue-600  hover:bg-[#fef5bd] hover:text-black bg-[#FFDF00]">
-                <Link to="/login">{"Se connecter | S'inscrire"}</Link>
-              </li>
+              {!isLoggedIn ? (
+                <LogoutButton />
+              ) : (
+                <li className=" border-blue-500 rounded-sm px-[25px] py-[3px] text-blue-600  hover:bg-[#fef5bd] hover:text-black bg-[#FFDF00]">
+                  <Link to="/login">{"Se connecter | S'inscrire"}</Link>
+                </li>
+              )}
             </ul>
           </nav>
         </header>
