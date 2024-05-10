@@ -13,7 +13,10 @@ const MentorForm = () => {
   } = useForm({ defaultValues: formData });
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:3001/users", data);
+      const response = await axios.post(
+        "https://capstone2-c2-theodorebinda.onrender.com/users",
+        data
+      );
       console.log(response.data);
       alert(`${data.nom} a été enregistré`);
       window.location.href = "/dashbord";

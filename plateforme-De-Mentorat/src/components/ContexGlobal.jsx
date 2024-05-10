@@ -13,10 +13,12 @@ const ContextData = ({ children }) => {
   console.log({ dataMentoree });
 
   useEffect(() => {
-    axios.get("http://localhost:3001/users").then((response) => {
-      setDataMentoree(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://capstone2-c2-theodorebinda.onrender.com/users")
+      .then((response) => {
+        setDataMentoree(response.data);
+        console.log(response.data);
+      });
   }, []);
 
   useEffect(() => {
@@ -26,22 +28,28 @@ const ContextData = ({ children }) => {
     });
   }, []);
   useEffect(() => {
-    axios.get("http://localhost:3001/users").then((response) => {
-      setDataPartenaire(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://capstone2-c2-theodorebinda.onrender.com/users")
+      .then((response) => {
+        setDataPartenaire(response.data);
+        console.log(response.data);
+      });
   }, []);
   useEffect(() => {
-    axios.get("http://localhost:3000/sessions").then((response) => {
-      setDataSessions(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://capstone2-c2-theodorebinda.onrender.com/sessions")
+      .then((response) => {
+        setDataSessions(response.data);
+        console.log(response.data);
+      });
   }, []);
   useEffect(() => {
-    axios.get("http://localhost:3000/reunions").then((response) => {
-      setDataReunion(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://capstone2-c2-theodorebinda.onrender.com/reunions")
+      .then((response) => {
+        setDataReunion(response.data);
+        console.log(response.data);
+      });
   }, []);
   return (
     <ContextGlobal.Provider

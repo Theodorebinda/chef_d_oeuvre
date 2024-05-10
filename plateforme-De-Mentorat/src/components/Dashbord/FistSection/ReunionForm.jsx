@@ -3,12 +3,7 @@ import { ContextGlobal } from "../../ContexGlobal";
 
 export default function ReunionForm() {
   //   const { dataReunion, setDataReunion} = useContext(ContextGlobal);
-  const [dataReunion, setDataReunion] = useState({
-    title: "",
-    date: "",
-    time: "",
-    location: "",
-  });
+  const [dataReunion, setDataReunion] = useState(ContextGlobal);
 
   // State pour gérer le tableau de réunions
   const [reunions, setReunions] = useState([]);

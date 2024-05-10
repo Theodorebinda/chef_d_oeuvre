@@ -11,10 +11,13 @@ function LoginForm() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:3001/login", {
-        email: data.email,
-        password: data.password,
-      });
+      const response = await axios.post(
+        "https://capstone2-c2-theodorebinda.onrender.com/login",
+        {
+          email: data.email,
+          password: data.password,
+        }
+      );
       localStorage.setItem("token", JSON.stringify(response.data));
       console.log("Login successful:", response.data);
       window.location.href = "/dashbord";

@@ -11,7 +11,7 @@ export default function Points() {
       </span>
       <div className="flex flex-col items-center">
         <span>
-          {dataSessions.map((point, index) => (
+          {dataSessions?.slice(0, 1).map((point, index) => (
             <span key={index}>{point.points}</span>
           ))}{" "}
         </span>

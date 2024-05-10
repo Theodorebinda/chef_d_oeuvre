@@ -15,7 +15,7 @@ function Cours() {
       </span>
       <div className="flex flex-col items-center">
         <span>
-          {dataSessions?.map((session, index) => (
+          {dataSessions?.slice(0, 1).map((session, index) => (
             <span key={index}>{session.cours.length}</span>
           ))}{" "}
         </span>
