@@ -22,10 +22,12 @@ const ContextData = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/users").then((response) => {
-      setDataMentor(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://capstone2-c2-theodorebinda.onrender.com/users")
+      .then((response) => {
+        setDataMentor(response.data);
+        console.log(response.data);
+      });
   }, []);
   useEffect(() => {
     axios
