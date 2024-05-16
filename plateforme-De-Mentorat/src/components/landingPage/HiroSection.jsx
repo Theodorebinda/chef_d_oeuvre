@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function HiroSection() {
   return (
     <>
-      <div className="flex max-w-full  justify-between font-custom">
+      <div className="flex max-w-full  justify-between font-custom flex-wrap">
         <div className=" w-2/4 p-[20px]">
           <div className="justify-end">
             <img
