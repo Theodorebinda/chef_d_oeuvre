@@ -5,10 +5,10 @@ function Login() {
   return (
     <div className=" flex  justify-between  flex-col pt-20 bg-[#F5F5F5]">
       <div className="flex justify-end items-center h-screen pb-20">
-        <div className="w-[40%] sm:w-full ">
+        <div className="md:w-[40%] w-full">
           <LoginForm />
         </div>
-        <div className="w-[30%] md:hidden">
+        <div className="w-[30%] hidden md:block">
           <img className="" src="src\assets\img\background\arrow2.svg" alt="" />
         </div>
       </div>

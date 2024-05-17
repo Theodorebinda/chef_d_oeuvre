@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 function HiroSection() {
   return (
     <>
-      <div className="flex max-w-full  justify-between font-custom flex-wrap">
-        <div className=" w-2/4 p-[20px]">
+      <div className="flex max-w-full flex-col md:flex-row justify-between font-custom ">
+        <div className=" max-w-max flex-shrink-0 px-[20px] pt-5 md:w-2/4">
           <div className="justify-end">
             <img
-              className="w-[200px] "
+              className="max-w-32 md:w-[200px] py-4"
               src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-14_tlhfpz.svg"
               alt=""
             />
@@ -24,21 +24,21 @@ function HiroSection() {
           </div>
           <div className="flex  justify-between items-center pt-0">
             <img
-              className="w-[150px] ml-[15%]"
+              className="max-w-28 md:w-[200px] ml-[15%]"
               src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-14-2_edr27p.svg"
               alt=""
             />
             <img
-              className="w-[200px]"
+              className=" max-w-48 transform scale-x-[-1] md:transform-none md:scale-x-[-1] "
               src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-08_1_p7nuwh.svg"
               alt=""
             />
           </div>
         </div>
-        <div className=" w-2/4 bg-[#FFFCEA] text-center ">
+        <div className=" max-w-max bg-[#FFFCEA] text-center flex-shrink-0 md:w-2/4 ">
           <div className="justify-end">
             <img
-              className="w-[150px] "
+              className="max-w-32 md:w-[150px]"
               src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-14-2_edr27p.svg"
               alt=""
             />
@@ -55,12 +55,12 @@ function HiroSection() {
           </div>
           <div className="flex  justify-between">
             <img
-              className="w-[200px] mt-[6%]"
+              className="max-w-48 mt-[6%] transform scale-x-[-1] md:transform-none md:scale-x-[-1]"
               src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834665/1A1_controlrocks-73_pcm7js.svg"
               alt=""
             />
             <img
-              className="w-[200px] mr-[10%] mb-[8%]"
+              className="w-[200px] mr-[10%] mb-[8%] "
               src="https://res.cloudinary.com/dhdaxlymt/image/upload/v1714834663/1A1_controlrocks-14_tlhfpz.svg"
               alt=""
             />

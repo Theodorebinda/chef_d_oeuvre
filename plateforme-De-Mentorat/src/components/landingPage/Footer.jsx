@@ -19,7 +19,7 @@ function Footer() {
         </div>
         <ul className="flex justify-end items-center gap-8">
           <li>Nous Contacter</li>
-          <li>Mention Legale</li>
+          <li className="hidden md:block">Mention Legale</li>
           <li>
             <img
               className="w-[60px]"

@@ -71,16 +71,35 @@ const Navigation = () => {
           </nav>
         </header>
       ) : (
-        <header className="fixed top-0 right-0 bottom-0 w-[250px] h-[300px] bg-white shadow-lg z-50">
+        <header className="fixed top-0 right-0 bottom-0 w-[250px] h-[200px] bg-white shadow-lg z-50">
           <div>
             <div className="p-5">
               <button onClick={toggleMenu} className=" fixed right-0 pr-3">
-                X
+                <span>
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </span>
               </button>
               <ul className="flex flex-col mt-6 justify-center items-center">
-                <li className="my-2">Etudiant</li>
-                <li className="my-2">Mentor</li>
-                <li className="my-2">Se Connecter</li>
+                <Link to="/singUpMentoré">
+                  <li className="my-2">Etudiant</li>
+                </Link>
+                <Link to="/singUpMentor">
+                  <li className="my-2">Mentor</li>
+                </Link>
+                <Link to="/login">Se Connecter</Link>
               </ul>
             </div>
           </div>
